@@ -29,7 +29,7 @@ SELECT COUNT(f.`length`) AS Число_фильмов FROM film f WHERE f.length
 Получите информацию, за какой месяц была получена наибольшая сумма платежей, и добавьте информацию по количеству аренд за этот месяц.
 
 ```SQL
-SELECT DATE_FORMAT(p.payment_date,'%Y-%M') AS Месяц, (SUM(p.amount)) AS Сумма_в_месяц, COUNT(p.rental_id) AS Количество_аренд FROM payment p GROUP BY Месяц ORDER BY Сумма_в_месяц DESC LIMIT 1;
+SELECT DATE_FORMAT(p.payment_date,'%Y-%M') AS Год_Месяц, (SUM(p.amount)) AS Сумма_в_месяц, COUNT(p.rental_id) AS Количество_аренд FROM payment p GROUP BY Год_Месяц ORDER BY Сумма_в_месяц DESC LIMIT 1;
 ```
 
 ![alt text](https://github.com/mxssclxck/hw-12.04/blob/main/img/3.png)
