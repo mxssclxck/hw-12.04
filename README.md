@@ -14,6 +14,14 @@ SELECT CONCAT(s.first_name,'',s.last_name) as ФИО, c.city, count(c2.customer_
 
 ![alt text](https://github.com/mxssclxck/hw-12.04/blob/main/img/1.png)
 
+Доработка
+
+```SQL
+SELECT CONCAT(s.first_name,'',s.last_name) as ФИО, c.city,s.staff_id AS ИД_Сотрудника, count(c2.customer_id) as Количество FROM staff s JOIN address a ON s.address_id = a.address_id JOIN city c ON a.city_id = c.city_id JOIN store s2 ON s2.store_id = s.store_id JOIN customer c2 ON s2.store_id = c2.store_id JOIN staff s3 ON s3.staff_id = s.staff_id GROUP BY s.first_name, s.last_name, c.city,s.staff_id HAVING Количество > 300;
+```
+
+![alt text](https://github.com/mxssclxck/hw-12.04/blob/main/img/1-1.png)
+
 ## Задание 2.
 
 Получите количество фильмов, продолжительность которых больше средней продолжительности всех фильмов.
